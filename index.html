@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Static Web Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+</head>
+<body>
+    <h1>Hive Day Counter</h1>
+    <p>The hive run started on Diddy's birthday on 2024-03-02.</p>
+    <p>It is day <span id="hive-run-day"></span>.</p>
+
+    <script>
+			const kickoff = moment("2024-03-02"); //Diddy's birthday
+			const now = moment().startOf("day");
+			const diffInDays = now.diff(kickoff, "days", false) + 1
+
+			document.getElementById('hive-run-day').textContent = diffInDays;
+    </script>
+</body>
+</html>
+
